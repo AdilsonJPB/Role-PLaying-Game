@@ -62,5 +62,52 @@ function goTown() {
 }
 
 function goStore() {
-    update(locations[1]);
+  update(locations[1]);
+}
+
+function goCave() {
+    update(locations[2]);
+}
+
+function fightDragon() {
+  console.log("fighting dragon")
+}
+
+function buyHealth() {
+  if (gold >= 10) {
+    gold -= 10;
+    health += 10;
+    gold.innerText = gold;
+    health.innerText = health;
+  } else {
+    text.innerText = "You do note have enough gold to buy health";
+  }
+}
+
+function buyWeapon() {
+  if (currentWeapon < weapons.lenght -1) {
+    if (gold >= 30) {
+      gold -= 30;
+      currentWeapon ++;
+      goldText.innerText = gold;
+      let newWeapon = weapons[currentWeapon].name;
+      text.innerText = "You now have a " + newWeapon + ".";
+    }
+  } else {
+    text.innerText = "You already have the most powerful weapon!";
+    button2.innerText = "Sell weapon for 15 gold";
+    button2.onlick = sellWeapon;
+  }
+}
+
+function sellWeapon() {
+
+}
+
+function fightSlime() {
+
+}
+
+function fightBeast() {
+  
 }
