@@ -77,8 +77,8 @@ function buyHealth() {
   if (gold >= 10) {
     gold -= 10;
     health += 10;
-    gold.innerText = gold;
-    health.innerText = health;
+    goldText.innerText = gold;
+    healthText.innerText = health;
   } else {
     text.innerText = "You do note have enough gold to buy health";
   }
@@ -91,6 +91,7 @@ function buyWeapon() {
       currentWeapon ++;
       goldText.innerText = gold;
       let newWeapon = weapons[currentWeapon].name;
+      inventory.push(newWeapon);
       text.innerText = "You now have a " + newWeapon + ".";
     }
   } else {
@@ -109,5 +110,5 @@ function fightSlime() {
 }
 
 function fightBeast() {
-  
+
 }
